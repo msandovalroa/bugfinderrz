@@ -28,6 +28,11 @@
     justify-content: space-between;
 }
 
+.buttonGroup {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 tr {
     outline: thin solid
 }

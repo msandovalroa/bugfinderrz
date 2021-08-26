@@ -14,7 +14,7 @@ const formatDate = (dateString) => {
 }
 
 function OrdersTable({ data, actions }) {
-    const { selectOrder } = actions;
+    const { deleteOrder, selectOrder } = actions;
     return (
         <div>
             <h1>Customer Orders</h1>
@@ -42,6 +42,10 @@ function OrdersTable({ data, actions }) {
                                     <button
                                         type="button" 
                                         className="deleteButton"
+                                        onClick={() => {
+                                            selectOrder(order)
+                                            deleteOrder()
+                                        }}
                                     >
                                         Delete
                                     </button>

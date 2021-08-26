@@ -21,3 +21,13 @@ There seems to be an issue with total price sometimes. On some order details, th
 
 
 ---
+
+
+## Delete a Customer Order
+### QA Notes
+I'm currently unable to delete a customer order. Every time I click the "Delete" button from the Customer Orders table, I get a white screen.
+
+### Dev Notes / Response
+
+
+---
