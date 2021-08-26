@@ -1,0 +1,33 @@
+.detailButton {
+    background-color:blue;
+    color: white;
+    cursor:pointer;
+}
+    
+.deleteButton {
+    background-color:red;
+    color: white;
+    cursor:pointer;
+}
+
+tr {
+    outline: thin solid
+}
+
+th {
+    min-width: 200px;
+    height: 50px;
+    margin: 25px;
+}
+
+td {
+    min-width: 200px;
+    height: 50px;
+    margin: 25px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button {
+    margin: 10px
+}

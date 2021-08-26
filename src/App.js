@@ -1,7 +1,8 @@
 import React from 'react';
+import OrdersTable from '../components/OrdersTable';
 
 const App = () => (
-    <h1>Bugfinderrz</h1>
+    <OrdersTable />
 )
 
 export default App
