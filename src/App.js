@@ -1,8 +1,8 @@
 import React from 'react';
-import OrdersTable from '../components/OrdersTable';
+import Orders from '../components/Orders';
 
 const App = () => (
-    <OrdersTable />
+    <Orders />
 )
 
 export default App

@@ -1,3 +1,8 @@
+.layout {
+    display: flex;
+    justify-content: center;
+}
+
 .detailButton {
     background-color:blue;
     color: white;
@@ -8,6 +13,19 @@
     background-color:red;
     color: white;
     cursor:pointer;
+}
+
+.backButton {
+    background-color:white;
+    color:blue;
+    cursor:pointer;
+    border: none;
+}
+
+.headerContent {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 tr {

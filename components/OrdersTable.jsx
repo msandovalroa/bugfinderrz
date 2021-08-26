@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ordersData } from '../lib/orders';
 
 const formatDate = (dateString) => {
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -14,39 +13,50 @@ const formatDate = (dateString) => {
     return `${month} ${day}, ${year} - ${hours}:${minutes}`;
 }
 
-export class OrdersTable extends Component {
-    static propTypes = {
+function OrdersTable({ data, actions }) {
+    const { selectOrder } = actions;
+    return (
+        <div>
+            <h1>Customer Orders</h1>
 
-    }
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Order Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map(order => (
+                            <tr key={order.id}>
+                                <td>{order.customerName}</td>
+                                <td>{formatDate(order.createdOn)}</td>
+                                <td>
+                                    <button
+                                        type="button"
+                                        className="detailButton"
+                                        onClick={() => selectOrder(order)}
+                                    >
+                                        Details
+                                    </button>
+                                    <button
+                                        type="button" 
+                                        className="deleteButton"
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    )
+}
 
-    render() {
-        return (
-            <div>
-                <h1>Customer Orders</h1>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Customer</th>
-                            <th>Order Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {ordersData.map(order => (
-                                <tr key={order.id}>
-                                    <td>{order.customerName}</td>
-                                    <td>{formatDate(order.createdOn)}</td>
-                                    <td>
-                                        <button type="button" className="detailButton">Details</button>
-                                        <button type="button" className="deleteButton">Delete</button>
-                                    </td>
-                                </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        )
-    }
+OrdersTable.propTypes = {
+    data: PropTypes.array.isRequired,
+    actions: PropTypes.objectOf(PropTypes.func).isRequired
 }
 
 export default OrdersTable
