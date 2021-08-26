@@ -1,0 +1,5 @@
+// .babelrc.json
+
+{
+    "presets": ["env", "react"]
+}
