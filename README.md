@@ -10,7 +10,11 @@ As you address any bugs, please add any comments regarding the bug you may have 
 
 Anything QA hasn't found but you addressed, please note in the "Other" section.
 
+## How to get started
+- Clone this repo to your repository.
+- Make a feature branch with all of your changes.
+- Make a pull request for the feature branch into the original branch.
+- Send us a link the the pull request.
+
 ## Running the app
-    - yarn install
-    - yarn start
-    The app should run and automatically recompile at http://localhost:1234
+Run `yarn install` and `yarn start` and the app should run and automatically recompile at http://localhost:1234
