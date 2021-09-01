@@ -8,9 +8,10 @@ const formatDate = (dateString) => {
     const month = monthNames[dateObj.getMonth()];
     const day = String(dateObj.getDate()).padStart(2, '0');
     const year = dateObj.getFullYear();
-    const hours = dateObj.getHours();
-    const minutes = dateObj.getMinutes();
-    return `${month} ${day}, ${year} - ${hours}:${minutes}`;
+    const hours = (dateObj.getHours()>12)? dateObj.getHours()-12 : (dateObj.getHours()<1) ? "12" : dateObj.getHours();
+    const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+    const ampm = (dateObj.getHours()<=12)? "AM" : "PM";
+    return `${month} ${day}, ${year} - ${hours}:${minutes} ${ampm}`;
 }
 
 function OrdersTable({ data, actions }) {

@@ -5,7 +5,7 @@ function OrderDetailsTable({ data, actions }) {
     const { customerName, items } = data;
     const { clearSelected } = actions;
     const totalQuantity = items.reduce((total, item) => total += item.quantity, 0);
-    const totalPrice = items.reduce((total, item) => total += (item.price/100), 0);
+    const totalPrice = items.reduce((total, item) => total += ((item.price/100)*item.quantity), 0).toFixed(2);
 
     return (
         <div>
@@ -35,7 +35,7 @@ function OrderDetailsTable({ data, actions }) {
                                 <td>{item.name}</td>
                                 <td>{item.size || 'n/a'}</td>
                                 <td>{item.quantity}</td>
-                                <td>{`$${item.price/100}`}</td>
+                                <td>{`$${(item.price/100).toFixed(2)}`}</td>
                             </tr>
                     ))}
 

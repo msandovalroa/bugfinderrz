@@ -8,12 +8,13 @@ function DeleteOrder({ data, actions }) {
     const handleClick = () => {
         clearSelected()
         deleteOrder()
+        confirmDelete()
     };
 
     return (
         <div>
             <h1>{`Are you sure you want to delete ${customerName}'s order?`}</h1>
-            <div className="buttonGroup">
+            { <div className="buttonGroup">
                 <button
                     type="button"
                     className="detailButton"
@@ -27,11 +28,13 @@ function DeleteOrder({ data, actions }) {
                 <button
                     type="button" 
                     className="deleteButton"
-                    onClick={confirmDelete()}
+                    onClick={()=>{
+                        confirmDelete()
+                    }}
                 >
                     Trash it!
                 </button>
-            </div>
+            </div> }
         </div>
     )
 }
